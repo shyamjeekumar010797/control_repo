@@ -2,6 +2,10 @@ node default{
 file {'/root/README':
       ensure=>file,
       content=>'This is readme',
+      file{'/etc/puppetlabs/code/environments/Production/README':
+      ensure=>present,
+      content=>$fqdn,
+      }
     }
 }
 
